@@ -1,0 +1,152 @@
+/* General Styles */
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: black;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  color: #ffa500;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-button,
+.signup-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.signup-button {
+  background-color: #ffa500;
+  color: black;
+  border-radius: 4px;
+}
+
+/* Form Section */
+.form-container {
+  background-color: black;
+  color: white;
+  margin: 40px auto;
+  padding: 30px;
+  width: 400px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-title {
+  color: #ffa500;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid #ffa500;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+}
+
+.submit-button {
+  background-color: #ffa500;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-link {
+  color: #ccc;
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #ffa500;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.footer-links a:hover {
+  transform: rotatez(10deg);
+  color: #ffa500;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.social-icons a:hover {
+  transform: rotatez(10deg);
+  color: #ffa500;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #ccc;
+}

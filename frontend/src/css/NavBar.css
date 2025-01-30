@@ -1,0 +1,93 @@
+.navbar {
+  position: absolute;
+  top: 0px;
+  height: 8vh;
+  width: 100%;
+  background-color: black;
+  z-index: 555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top {
+  /* border: 1px solid white; */
+  transform: translateY(20px);
+  width: 24%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  /* border: 1px solid red; */
+  height: 8vh;
+  width: 15%;
+  padding-bottom: 5px;
+}
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: invert(1);
+}
+.packet {
+  /* border: 1px solid red; */
+  width: 60%;
+  font-size: 16x;
+  color: white;
+  padding: 5px;
+}
+.packet h3 {
+  color: orange;
+  /* border:1px solid green; */
+  text-align: center;
+  font-size: 2em;
+}
+.packet p {
+  color: white;
+  /* border:1px solid green; */
+  text-align: center;
+  font-size: 0.5em;
+}
+
+.last {
+  /* border: 1px solid white; */
+  transform: translateY(10px);
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  padding-right: 22px;
+}
+
+.last button1 {
+  font-family: "Inter", sans-serif;
+  /* border: 1px solid white; */
+  /* color: rgba(255, 255, 255, 0.821); */
+  color: #fff;
+  font-size: 0.8em;
+}
+.last button2 {
+  font-family: "Inter", sans-serif;
+  /* border: 1px solid white; */
+  color: #fff;
+  font-weight: 700;
+  background-color: #fb8a00e3;
+  padding: 7px 7px;
+  font-size: 0.8em;
+  border-radius: 6px;
+}
+
+.last button1:hover {
+  color: orange;
+  cursor: pointer;
+}
+.last button2:hover {
+  /* background-color: black; */
+  color: black;
+  cursor: pointer;
+}
