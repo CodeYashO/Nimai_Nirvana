@@ -9,6 +9,7 @@ const UserLogin = ({admin}) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    role : admin ? "admin" : "user",
   });
 
   const navigate = useNavigate();
@@ -27,8 +28,7 @@ const UserLogin = ({admin}) => {
     e.preventDefault();
     setMessage("Processing...");
 
-    let url = admin ? "http://localhost:5000/api/auth/admin/login" : "http://localhost:5000/api/auth/user/login";
-
+    let url = "http://localhost:5000/api/auth/user/login";
     console.log(url)
 
     try {
@@ -37,7 +37,7 @@ const UserLogin = ({admin}) => {
 
       if (response.status === 200) {
         setMessage("User login successfully!");
-        setFormData({email: "", password: "" }); // Reset form
+        setFormData({email: "", password: "" , role : "user"}); // Reset form
         navigate("/userDashboard");
       } else {
         setMessage(response.data.message || "Something went wrong!");
@@ -91,7 +91,7 @@ const UserLogin = ({admin}) => {
           Don't have a account ? <a onClick={() => navigate('/signup')}>Sign up</a>
         </p>
         <p className="user_login_login-link">
-          <a onClick={() => navigate('/forgot-password')}>Forgot Password</a>
+          <a onClick={() => navigate('/forgot-password')}>Forgot Password ? </a>
         </p>
       </div>
 

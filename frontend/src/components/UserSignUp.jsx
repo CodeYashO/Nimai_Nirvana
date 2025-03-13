@@ -7,15 +7,17 @@ import "../css/UserSignUp.css"; // Keep your existing CSS file for styles.
 const UserSignup = ({admin}) => {
   console.log(admin);
   console.log(window.location.href);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     password: "",
+    role : admin ? "admin" : "user",
   });
 
   const navigate = useNavigate();
-
+ 
   console.log(formData);
 
   const [message, setMessage] = useState("");
@@ -30,16 +32,14 @@ const UserSignup = ({admin}) => {
     e.preventDefault();
     setMessage("Processing...");
 
-    let url = admin ? "http://localhost:5000/api/auth/admin/signup" : "http://localhost:5000/api/auth/user/signup";
-
-    console.log(url)
+    let url = "http://localhost:5000/api/auth/user/signup";
 
     try { 
       const response = await axios.post(url , formData);
       console.log(response);     
       if (response.status === 201) {
         setMessage("User registered successfully!");
-        setFormData({ name: "", email: "", phone: "", password: "" }); // Reset form
+        setFormData({ name: "", email: "", phone: "", password: "" , role : "user"}); // Reset form
         navigate("/user-otp-verification")
       } else {
         setMessage(response.data.message || "Something went wrong!");

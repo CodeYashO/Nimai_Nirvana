@@ -10,7 +10,7 @@ const generateOTP = () =>
 exports.signup = async (req, res) => {
   console.log(req.body)
   try {
-    const { name, email, phone, password } = req.body;
+    const { name, email, phone, password , role } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser)
@@ -26,6 +26,7 @@ exports.signup = async (req, res) => {
       email,
       phone,
       password: hashedPassword,
+      role,
       otp,
       otpExpiry,
     });
@@ -62,7 +63,7 @@ exports.verifyEmail = async (req, res) => {
     await user.save(); 
 
     const token = jwt.sign(
-      { userId: user._id },
+      { userId: user._id , role : user.role},
       process.env.JWT_SECRET ,
       { expiresIn: "1h" }
     );
@@ -78,10 +79,10 @@ exports.verifyEmail = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     console.log(req.body);
-    const { email, password } = req.body;
+    const { email, password , role} = req.body;
 
  
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email , role});
     if (!user) return res.status(404).json({ message: "User not found." });
 
     if (!user.isVerified)
@@ -91,7 +92,7 @@ exports.login = async (req, res) => {
     if (!isPasswordValid)
       return res.status(400).json({ message: "Invalid credentials." });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id , role : user.role}, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
 
