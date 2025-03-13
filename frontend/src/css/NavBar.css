@@ -1,4 +1,4 @@
-.navbar {
+.navbar_navbar {
   position: absolute;
   top: 0px;
   height: 8vh;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.top {
+.navbar_top {
   /* border: 1px solid white; */
   transform: translateY(20px);
   width: 24%;
@@ -19,39 +19,39 @@
   justify-content: center;
   align-items: center;
 }
-.logo {
+.navbar_logo {
   /* border: 1px solid red; */
   height: 8vh;
   width: 15%;
   padding-bottom: 5px;
 }
-.logo img {
+.navbar_logo img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   filter: invert(1);
 }
-.packet {
+.navbar_packet {
   /* border: 1px solid red; */
   width: 60%;
   font-size: 16x;
   color: white;
   padding: 5px;
 }
-.packet h3 {
+.navbar_packet h3 {
   color: orange;
   /* border:1px solid green; */
   text-align: center;
   font-size: 2em;
 }
-.packet p {
+.navbar_packet p {
   color: white;
   /* border:1px solid green; */
   text-align: center;
   font-size: 0.5em;
 }
 
-.last {
+.navbar_last {
   /* border: 1px solid white; */
   transform: translateY(10px);
   width: 20%;
@@ -64,14 +64,14 @@
   padding-right: 22px;
 }
 
-.last button1 {
+.navbar_last button1 {
   font-family: "Inter", sans-serif;
   /* border: 1px solid white; */
   /* color: rgba(255, 255, 255, 0.821); */
   color: #fff;
   font-size: 0.8em;
 }
-.last button2 {
+.navbar_last button2 {
   font-family: "Inter", sans-serif;
   /* border: 1px solid white; */
   color: #fff;
@@ -82,11 +82,11 @@
   border-radius: 6px;
 }
 
-.last button1:hover {
+.navbar_last button1:hover {
   color: orange;
   cursor: pointer;
 }
-.last button2:hover {
+.navbar_last button2:hover {
   /* background-color: black; */
   color: black;
   cursor: pointer;

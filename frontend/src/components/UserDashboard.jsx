@@ -1,9 +1,9 @@
 const UserDashboard = () => {
     return (
-        <>
-        <h1>Hello user Dashboard</h1>
-        </>
+        <div>
+            hello User Dashboard.
+        </div>
     )
 }
 
-export default UserDashboard
+export default UserDashboard;

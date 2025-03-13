@@ -7,10 +7,11 @@ const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
-connectDB();
+connectDB(); 
 
 app.use(cors());  
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.json());
 app.use("/api/auth/user", userRoutes);
 app.use("/api/auth/admin", adminRoutes);
 

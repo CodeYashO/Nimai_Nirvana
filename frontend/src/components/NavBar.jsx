@@ -11,17 +11,17 @@ const Navbar = ()=>{
     }
 
     return(<>
-        <div className="navbar">
-            <div className="top">
-                <div className="logo">
+        <div className="navbar_navbar">
+            <div className="navbar_top">
+                <div className="navbar_logo">
                     <img src="/favicon.png" alt="logo" />
                 </div>
-                <div className="packet">
+                <div className="navbar_packet">
                     <h3>Nimai Nirvana</h3>
                     <p>Develop Mental Resilence & Connect your True Self</p>
                 </div>
             </div>
-            <div className="last">
+            <div className="navbar_last">
                 <button1 onClick={()=>handleClicked("/login")}>Login</button1>
                 <button2 onClick={()=>handleClicked("/signUp")}>SignUp</button2>
             </div>

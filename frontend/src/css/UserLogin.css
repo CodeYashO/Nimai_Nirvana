@@ -1,13 +1,13 @@
 /* General Styles */
   /* Container */
-  .container {
+  .user_login_container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
   
   /* Header */
-  .header {
+  .user_login_header {
     background-color: black;
     padding: 20px 40px;
     display: flex;
@@ -15,20 +15,20 @@
     align-items: center;
   }
   
-  .brand {
+  .user_login_brand {
     color: #FFA500;
     font-size: 20px;
     font-weight: 300; 
     cursor: pointer;
   }
   
-  .auth-buttons {
+  .user_login_auth-buttons {
     display: flex;
     gap: 10px;
   }
   
-  .login-button,
-  .signup-button {
+  .user_login_login-button,
+  .user_login_signup-button {
     background-color: transparent;
     color: white;
     border: none;
@@ -37,14 +37,14 @@
     /* font-weight: bold; */
   }
   
-  .signup-button {
+  .user_login_signup-button {
     background-color: #FFA500;
     color: black;
     border-radius: 4px;
   }
   
   /* Form Section */
-  .form-container {
+  .user_login_form-container {
     background-color: black;
     color: white;
     margin: 40px auto;
@@ -54,20 +54,20 @@
     text-align: center;
   }
   
-  .form-title {
+  .user_login_form-title {
     color: #FFA500;
     font-size: 20px;
     font-weight: 400; 
     margin-bottom: 20px;
   }
   
-  .form {
+  .user_login_form {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
   
-  .input-field {
+  .user_login_input-field {
     padding: 10px;
     border: 1px solid #FFA500;
     border-radius: 5px;
@@ -76,7 +76,7 @@
     font-size: 14px;
   }
   
-  .submit-button {
+  .user_login_submit-button {
     background-color: #FFA500;
     color: black;
     border: none;
@@ -86,56 +86,14 @@
     cursor: pointer;
   }
   
-  .login-link {
+  .user_login_login-link {
     color: #ccc;
     margin-top: 15px;
+    cursor: pointer;
   }
   
-  .login-link a {
+  .user_login_login-link a {
     color: #FFA500;
     text-decoration: none;
   }
   
-  /* Footer */
-  .footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: auto;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .social-icons a {
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-  }
-  
-  .copyright {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #ccc;
-  }  
-
-  .login-link:hover {
-    cursor: pointer;
-  }

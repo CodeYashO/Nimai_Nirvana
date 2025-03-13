@@ -1,0 +1,66 @@
+/* FloatingButton.css */
+.floating-button-wrapper {
+    position: fixed;
+    bottom: 24%;
+    right:3%;
+    z-index: 1000;
+  }
+  
+  .floating-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50px; /* Initially small */
+    height: 50px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    animation: float 2s ease-in-out infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .floating-button .icon {
+    color: white;
+    flex-shrink: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .floating-button.hover {
+    background-color: #FF9933;
+    width: 180px; /* Expand on hover */
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  .floating-button.hover .icon {
+    left: 20px; /* Move icon to left smoothly */
+  }
+  
+  .floating-button-text {
+    font-weight: 500;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 22px; /* Give space for icon */
+  }
+  
+  .floating-button.hover .button-text {
+    opacity: 1;
+  }

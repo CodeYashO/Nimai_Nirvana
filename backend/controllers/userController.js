@@ -104,6 +104,7 @@ exports.login = async (req, res) => {
 };
 
 exports.forgotPassword = async (req, res) => {
+  console.log(req.body);
   try {
     const { email } = req.body;
 
@@ -124,7 +125,7 @@ exports.forgotPassword = async (req, res) => {
     await user.save();
 
     // Send Email
-    const resetUrl = `${req.protocol}://localhost:5000/api/auth/user/reset-password/${user.resetPasswordToken}`;
+    const resetUrl = `${req.protocol}://localhost:3000/reset-password/${user.resetPasswordToken}`;
     const message = `Reset your password by clicking on the following link: ${resetUrl}`;
     await sendEmail(email, "Password Reset", message);
 

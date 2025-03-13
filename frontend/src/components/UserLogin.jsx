@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../css/UserSignUp.css"; // Keep your existing CSS file for styles.
+import "../css/UserLogin.css"; // Keep your existing CSS file for styles.
+import Footer from "./Footer";
 
 const UserLogin = ({admin}) => {
   console.log(admin);
@@ -31,7 +32,7 @@ const UserLogin = ({admin}) => {
     console.log(url)
 
     try {
-      const response = await axios.post(url , formData );
+      const response = await axios.post(url , formData);
       console.log(response)
 
       if (response.status === 200) {
@@ -49,25 +50,25 @@ const UserLogin = ({admin}) => {
   };
 
   return (
-    <div className="container">
+    <div className="user_login_container">
       {/* Header */}
-      <header className="header"> 
-        <h1 className="brand" onClick={() => navigate('/')} >Nimai Nirvana</h1>
-        <div className="auth-buttons">
-          <button className="login-button">Login</button>
-          <button className="signup-button" onClick={() => navigate('/signup')} >SignUp</button>
+      <header className="user_login_header">
+        <h1 className="user_login_brand" onClick={() => navigate('/login')} >Nimai Nirvana</h1>
+        <div className="user_login_auth-buttons">
+          <button className="user_login_login-button" onClick={() => navigate('/login')} >Login</button>
+          <button className="user_login_signup-button" onClick={() => navigate('/signup')}>SignUp</button>
         </div>
       </header>
 
       {/* Signup Form */}
-      <div className="form-container">
-        <h2 className="form-title">Login To Your Account</h2>
-        <form className="form" onSubmit={handleSubmit}>
+      <div className="user_login_form-container">
+        <h2 className="user_login_form-title">Login To Your Account</h2>
+        <form className="user_login_form" onSubmit={handleSubmit}>
           <input
             type="email"
             name="email"
             placeholder="Enter Email ID"
-            className="input-field"
+            className="user_login_input-field"
             value={formData.email}
             onChange={handleChange}
             required
@@ -76,38 +77,27 @@ const UserLogin = ({admin}) => {
             type="password"
             name="password"
             placeholder="Enter Password"
-            className="input-field"
+            className="user_login_input-field"
             value={formData.password}
             onChange={handleChange}
             required
           />
-          <button type="submit" className="submit-button">
+          <button type="submit" className="user_login_submit-button">
             Login  →
           </button>
         </form>
-        {message && <p className="message">{message}</p>}
-        <p className="login-link">
-          don't have a account ? <a onClick={() => navigate('/signup')}>Sign up</a>
+        {message && <p className="user_login_message">{message}</p>}
+        <p className="user_login_login-link">
+          Don't have a account ? <a onClick={() => navigate('/signup')}>Sign up</a>
+        </p>
+        <p className="user_login_login-link">
+          <a onClick={() => navigate('/forgot-password')}>Forgot Password</a>
         </p>
       </div>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-links">
-          <a>About Us</a>
-          <a>Contact Us</a>
-          <a>Disclaimer</a>
-          <a>Privacy Policy</a>
-          <a>Help</a>
-        </div>
-        <div className="social-icons">
-          <a>Facebook</a>
-          <a>Twitter</a>
-          <a>YouTube</a>
-        </div>
-        <p className="copyright">© Copyright 2024 - Nimai Nirvana</p>
-      </footer>
-    </div>
+      {/* Footer */} 
+        <Footer/>
+      </div>
   );
 };
 

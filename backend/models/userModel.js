@@ -9,11 +9,12 @@ const userSchema = new mongoose.Schema(
     role : {type : String , default : "user"},
     isVerified: { type: Boolean, default: false },
     otp: { type: String },
+    payment : {type : Boolean , default : false},
     otpExpiry: { type: Date },
     token : String,
     expiresAt: Date,
     resetPasswordToken: String,
-    resetPasswordExpires: Date,
+    resetPasswordExpires: Date, 
   },
   { timestamps: true }
 );
