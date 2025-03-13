@@ -7,42 +7,6 @@
   min-height: 100vh;
 }
 
-/* Header */
-.user_signup_header {
-  background-color: black;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.user_signup_brand {
-  color: #ffa500;
-  font-size: 20px;
-  font-weight: 300;
-  cursor: pointer;
-}
-
-.user_signup_auth-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.user_signup_login-button,
-.user_signup_signup-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 8px 16px;
-}
-
-.user_signup_signup-button {
-  background-color: #ffa500;
-  color: black;
-  border-radius: 4px;
-}
-
 /* Form Section */
 .user_signup_form-container {
   background-color: black;

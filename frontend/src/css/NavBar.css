@@ -1,93 +1,35 @@
-.navbar_navbar {
-  position: absolute;
-  top: 0px;
-  height: 8vh;
-  width: 100%;
+/* header */
+.header_header {
   background-color: black;
-  z-index: 555;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar_top {
-  /* border: 1px solid white; */
-  transform: translateY(20px);
-  width: 24%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.navbar_logo {
-  /* border: 1px solid red; */
-  height: 8vh;
-  width: 15%;
-  padding-bottom: 5px;
-}
-.navbar_logo img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  filter: invert(1);
-}
-.navbar_packet {
-  /* border: 1px solid red; */
-  width: 60%;
-  font-size: 16x;
-  color: white;
-  padding: 5px;
-}
-.navbar_packet h3 {
-  color: orange;
-  /* border:1px solid green; */
-  text-align: center;
-  font-size: 2em;
-}
-.navbar_packet p {
-  color: white;
-  /* border:1px solid green; */
-  text-align: center;
-  font-size: 0.5em;
-}
-
-.navbar_last {
-  /* border: 1px solid white; */
-  transform: translateY(10px);
-  width: 20%;
-  height: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 20px;
-  font-size: 18px;
-  padding-right: 22px;
-}
-
-.navbar_last button1 {
-  font-family: "Inter", sans-serif;
-  /* border: 1px solid white; */
-  /* color: rgba(255, 255, 255, 0.821); */
-  color: #fff;
-  font-size: 0.8em;
-}
-.navbar_last button2 {
-  font-family: "Inter", sans-serif;
-  /* border: 1px solid white; */
-  color: #fff;
-  font-weight: 700;
-  background-color: #fb8a00e3;
-  padding: 7px 7px;
-  font-size: 0.8em;
-  border-radius: 6px;
-}
-
-.navbar_last button1:hover {
-  color: orange;
+.header_brand {
+  color: #ffa500;
+  font-size: 20px;
+  font-weight: 300;
   cursor: pointer;
 }
-.navbar_last button2:hover {
-  /* background-color: black; */
+
+.header_auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header_login-button,
+.header_signup-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.header_signup-button {
+  background-color: #ffa500;
   color: black;
-  cursor: pointer;
+  border-radius: 4px;
 }

@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
 import "../css/ResetPassword.css";
+import Navbar from "./NavBar";
 
 const ResetPassword = () => {
   const [formData, setFormData] = useState({
@@ -36,13 +37,7 @@ const ResetPassword = () => {
   return (
     <div className="reset-password_container">
       {/* Header */}
-      <header className="reset-password_header">
-        <h1 className="reset-password_brand" onClick={() => navigate('/login')} >Nimai Nirvana</h1>
-        <div className="reset-password_auth-buttons">
-          <button className="reset-password_login-button" onClick={() => navigate('/login')} >Login</button>
-          <button className="reset-password_signup-button" onClick={() => navigate('/signup')}>SignUp</button>
-        </div>
-      </header>
+     <Navbar/>
 
       {/* Signup Form */}
       <div className="reset-password_form-container">

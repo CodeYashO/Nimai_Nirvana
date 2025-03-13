@@ -6,43 +6,6 @@
   min-height: 100vh;
 }
 
-/* Header */
-.otp_header {
-  background-color: black;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.otp_brand {
-  color: #ffa500;
-  font-size: 20px;
-  font-weight: 300;
-  cursor: pointer;
-}
-
-.otp_auth-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.otp_login-button,
-.otp_signup-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 8px 16px;
-  /* font-weight: bold; */
-}
-
-.otp_signup-button {
-  background-color: #ffa500;
-  color: black;
-  border-radius: 4px;
-}
-
 /* Form Section */
 .otp_form-container {
   background-color: black;

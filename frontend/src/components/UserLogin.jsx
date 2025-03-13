@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../css/UserLogin.css"; // Keep your existing CSS file for styles.
 import Footer from "./Footer";
+import Navbar from "./NavBar";
 
 const UserLogin = ({admin}) => {
   console.log(admin);
@@ -52,13 +53,8 @@ const UserLogin = ({admin}) => {
   return (
     <div className="user_login_container">
       {/* Header */}
-      <header className="user_login_header">
-        <h1 className="user_login_brand" onClick={() => navigate('/login')} >Nimai Nirvana</h1>
-        <div className="user_login_auth-buttons">
-          <button className="user_login_login-button" onClick={() => navigate('/login')} >Login</button>
-          <button className="user_login_signup-button" onClick={() => navigate('/signup')}>SignUp</button>
-        </div>
-      </header>
+     
+     <Navbar/>
 
       {/* Signup Form */}
       <div className="user_login_form-container">

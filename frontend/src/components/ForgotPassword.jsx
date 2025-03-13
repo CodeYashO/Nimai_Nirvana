@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import Footer from "./Footer";
+import Navbar from "./NavBar";
 import "../css/ForgotPassword.css";
 
 const ForgotPassword = () => {
@@ -27,13 +28,7 @@ const ForgotPassword = () => {
   return (
     <div className="forgot_password_container">
       {/* Header */}
-      <header className="forgot_password_header">
-        <h1 className="forgot_password_brand" onClick={() => navigate('/login')} >Nimai Nirvana</h1>
-        <div className="forgot_password_auth-buttons">
-          <button className="forgot_password_login-button" onClick={() => navigate('/login')} >Login</button>
-          <button className="forgot_password_signup-button" onClick={() => navigate('/signup')}>SignUp</button>
-        </div>
-      </header>
+     <Navbar/>
 
       <div className="forgot_password_form-container">
         <h2 className="forgot_password_form-title">Change Password</h2>
