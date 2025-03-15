@@ -1,0 +1,18 @@
+.userdashboard_container {
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+    width: 100vw;
+    background-color: blue;
+}
+
+.userdashboard_menu {
+    width: 20%;
+    background-color: red;
+}
+.userdashboard_content {
+    width: 80%;
+    background-color: violet;
+    overflow-y: scroll;
+}
+

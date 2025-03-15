@@ -26,6 +26,7 @@ const OtpVerification = () => {
     try {
       const response = await axios.post("http://localhost:5000/api/auth/user/verify-email", formData);
       console.log(response);
+      localStorage.setItem("token" , response.data.token);
 
       if (response.status === 200) {
         setMessage("OTP Verified Successfully!");

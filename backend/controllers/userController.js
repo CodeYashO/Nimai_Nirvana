@@ -8,9 +8,9 @@ const generateOTP = () =>
   Math.floor(100000 + Math.random() * 900000).toString();
 
 exports.signup = async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   try {
-    const { name, email, phone, password , role } = req.body;
+    const { name, email, phone, password, role } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser)
@@ -46,7 +46,7 @@ exports.signup = async (req, res) => {
 
 exports.verifyEmail = async (req, res) => {
   try {
-    console.log(req.body)
+    console.log(req.body);
     const { email, otp } = req.body;
 
     const user = await User.findOne({
@@ -60,11 +60,11 @@ exports.verifyEmail = async (req, res) => {
     user.isVerified = true;
     user.otp = null;
     user.otpExpiry = null;
-    await user.save(); 
+    await user.save();
 
     const token = jwt.sign(
-      { userId: user._id , role : user.role},
-      process.env.JWT_SECRET ,
+      { userId: user._id, role: user.role },
+      process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
     res
@@ -79,10 +79,9 @@ exports.verifyEmail = async (req, res) => {
 exports.login = async (req, res) => {
   try {
     console.log(req.body);
-    const { email, password , role} = req.body;
+    const { email, password, role } = req.body;
 
- 
-    const user = await User.findOne({ email , role});
+    const user = await User.findOne({ email, role });
     if (!user) return res.status(404).json({ message: "User not found." });
 
     if (!user.isVerified)
@@ -92,9 +91,13 @@ exports.login = async (req, res) => {
     if (!isPasswordValid)
       return res.status(400).json({ message: "Invalid credentials." });
 
-    const token = jwt.sign({ id: user._id , role : user.role}, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { id: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "1h",
+      }
+    ); 
 
     res.status(200).json({ message: "Login successful.", token });
   } catch (error) {
@@ -117,7 +120,7 @@ exports.forgotPassword = async (req, res) => {
 
     // hash the token
     user.resetPasswordToken = crypto
-      .createHash("sha256")
+      .createHash("sha256") 
       .update(resetToken)
       .digest("hex");
     console.log(user.resetPasswordToken);
@@ -165,5 +168,30 @@ exports.resetPassword = async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ message: "Server Error" });
+  }
+};
+ 
+exports.verifyToken = async (req, res) => {
+  try {
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) {
+      return res
+        .status(401)
+        .json({ valid: false, message: "No token provided" });
+    }
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(401).json({ valid: false, message: "User not found" });
+    }
+
+    res.json({ user: user, valid: true });
+  } catch (error) {
+    console.error("Token verification error:", error);
+    return res
+      .status(401)
+      .json({ valid: false, message: "Token invalid or expired" });
   }
 };

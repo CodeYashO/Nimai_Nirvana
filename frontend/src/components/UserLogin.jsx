@@ -38,6 +38,8 @@ const UserLogin = ({admin}) => {
 
       if (response.status === 200) {
         setMessage("User login successfully!");
+        localStorage.removeItem("token")
+        localStorage.setItem("token" , response.data.token);
         setFormData({email: "", password: "" , role : "user"}); // Reset form
         navigate("/userDashboard");
       } else {
@@ -53,7 +55,6 @@ const UserLogin = ({admin}) => {
   return (
     <div className="user_login_container">
       {/* Header */}
-     
      <Navbar/>
 
       {/* Signup Form */}
