@@ -1,15 +1,54 @@
 .userdashboard_container {
     display: flex;
     flex-direction: row;
+    justify-items: center;
     height: 70vh;
     width: 100vw;
     background-color: blue;
 }
 
+/* menu */
 .userdashboard_menu {
+    position: relative;
     width: 20%;
-    background-color: red;
+    background-color: black;
 }
+
+.userdashboard_menu_picture {
+    display: flex;
+    justify-content: center;
+}
+
+.userdashboard_profile_picture {
+    width: 100px;
+}
+
+.userdashboard_menu_link_container {
+    transform: translateY(30px);
+    width: 100%;
+    color: white;
+}
+
+.userdashboard_menu_link_list {
+    width: 100%;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.userdashboard_menu_link_list > li > i {
+    margin: 10px;
+}
+
+.userdashboard_menu_link_list > li {
+    cursor: pointer;
+}
+
+.userdashboard_menu_link_list > li:hover {
+    background-color: #ffa500;
+    cursor: pointer;
+}
+
+/* content */
 .userdashboard_content {
     width: 80%;
     background-color: violet;

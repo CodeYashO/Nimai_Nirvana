@@ -48,7 +48,7 @@ const OtpVerification = () => {
 
       {/* Signup Form */}
       <div className="otp_form-container">
-        <h2 className="otp_form-title">Change Password</h2>
+        <h2 className="otp_form-title">OTP Verification</h2>
         <form className="otp_form" onSubmit={handleSubmit}>
           <input
             type="email"
