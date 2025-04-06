@@ -4,6 +4,7 @@ import Navbar from "./NavBar";
 import { useNavigate } from "react-router-dom";
 import "../css/Appointment.css"
 import Footer from "./Footer";
+import ConsultNow from "./ConsultNow";
 
 const Appointment = () => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const Appointment = () => {
 
         {/* Dashboard content */}
         <div className="appointment_content">
-         
+            <ConsultNow/>
         </div>
       </div>
 

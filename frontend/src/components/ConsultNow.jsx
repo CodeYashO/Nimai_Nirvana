@@ -42,6 +42,18 @@ const ConsultNow = ({ onClose }) => {
           <option value="11:00 PM - 12:00 AM (UTC +5:30)">
             11:00 PM - 12:00 AM (UTC +5:30)
           </option>
+          <option value="11:00 PM - 12:00 AM (UTC +5:30)">
+            11:00 PM - 12:00 AM (UTC +5:30)
+          </option>
+          <option value="11:00 PM - 12:00 AM (UTC +5:30)">
+            11:00 PM - 12:00 AM (UTC +5:30)
+          </option>
+          <option value="11:00 PM - 12:00 AM (UTC +5:30)">
+            11:00 PM - 12:00 AM (UTC +5:30)
+          </option>
+          <option value="11:00 PM - 12:00 AM (UTC +5:30)">
+            11:00 PM - 12:00 AM (UTC +5:30)
+          </option>
         </select>
         
         <button type="submit" className="consultNow_submit-button">Book Now</button>
