@@ -1,13 +1,9 @@
 import { useEffect , useState } from "react";
 import axios from "axios";
-import Navbar from "./NavBar";
 import { useNavigate } from "react-router-dom";
-import "../css/Appointment.css"
-import Footer from "./Footer";
-import ConsultNow from "./ConsultNow";
-import Meetings from "./Meetings";
+import "../css/Meetings.css"
 
-const Appointment = () => {
+const Meetings = () => {
   const navigate = useNavigate();
   const [showConsult , setshowConsult] = useState(true);
   const [userfullname , setuserfullname] = useState("");
@@ -45,34 +41,11 @@ const Appointment = () => {
     checkingToken();
   });
 
-  return (
-    <div className="appointment_main_container">
-      <Navbar username={username}/>
-      <div className="appointment_container">
-        <div className="appointment_menu">
-            <div className="appointment_menu_picture">
-              <img src="/new-favicon.png" alt="profile" className="appointment_profile_picture" />
-            </div>
-
-            <div className="appointment_menu_link_container">
-              <ul className="appointment_menu_link_list">
-                <li><i class="fa-solid fa-house"> </i>Dashboard</li>
-                <li><i class="fa-solid fa-chart-simple"></i>courses</li>
-                <li><i class="fa-solid fa-film"></i>report</li>
-                <li><i class="fa-regular fa-calendar-check"></i>appointment</li>
-              </ul>
-            </div>
-        </div>
-
-        {/* Dashboard content */}
-        <div className="appointment_content">
-            {showConsult ? <ConsultNow userfullname={userfullname} setshowConsult={setshowConsult}/> : <Meetings/>}
-        </div>
-      </div>
-
-      <Footer/>
-    </div>
+  return (  
+    <>
+    <h1>hello</h1>
+    </>
   );
 };
 
-export default Appointment;
+export default Meetings;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/ConsultNow.css";
 
-const ConsultNow = ({ onClose }) => {
+const ConsultNow = ({ onClose , userfullname , setshowConsult}) => {
   const [scheduleDate, setScheduleDate] = useState("");
   const [appointmentTime, setAppointmentTime] = useState("");
 
@@ -12,14 +12,14 @@ const ConsultNow = ({ onClose }) => {
 
   return (
     <div className="consultNow_container">
-      <button className="consultNow_close-button" onClick={onClose}>✖</button> {/* Close Button */}
+      <button className="consultNow_close-button" onClick={() => setshowConsult(false)}>✖</button> {/* Close Button */}
       
       <header className="consultNow_header">
         <div className="consultNow_badge">Consult</div>
         <span className="consultNow_title">Now</span>
       </header>
       
-      <h1 className="consultNow_username">John Doe</h1>
+      <h1 className="consultNow_username">{userfullname}</h1>
       
       <form onSubmit={handleSubmit} className="consultNow_form-container">
         <label className="consultNow_label">Schedule Date</label>
