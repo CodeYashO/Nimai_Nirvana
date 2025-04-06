@@ -11,13 +11,13 @@ const FloatingButton = ({ onClick }) => {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={() => {
-          onClick(); 
+          onClick();   
         }}
         className={`floating-button ${hover ? "hover" : ""}`}
       >
         <FaCalendarCheck size={20} className="icon" />
         <span className="floating-button-text">{hover ? "Book Appointment" : ""}</span>
-      </button>
+      </button>  
     </div>
   );
 };

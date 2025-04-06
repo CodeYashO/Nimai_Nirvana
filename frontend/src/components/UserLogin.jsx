@@ -40,6 +40,7 @@ const UserLogin = ({admin}) => {
         setMessage("User login successfully!");
         localStorage.removeItem("token")
         localStorage.setItem("token" , response.data.token);
+        localStorage.setItem("email" , response.data.email);
         setFormData({email: "", password: "" , role : "user"}); // Reset form
         navigate("/userDashboard");
       } else {
