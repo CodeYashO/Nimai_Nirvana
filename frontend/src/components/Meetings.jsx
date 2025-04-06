@@ -1,13 +1,14 @@
-import { useEffect , useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../css/Meetings.css"
+import "../css/Meetings.css";
 
 const Meetings = () => {
   const navigate = useNavigate();
-  const [showConsult , setshowConsult] = useState(true);
-  const [userfullname , setuserfullname] = useState("");
-  const [username , setusername] = useState("");
+  const [showConsult, setshowConsult] = useState(true);
+  const [userfullname, setuserfullname] = useState("");
+  const [username, setusername] = useState("");
+  const [totalmeeting, settotalmeeting] = useState([1, 2, 3, 4 , 5]);
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -19,32 +20,65 @@ const Meetings = () => {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-        const fullName = response.data.user.name.split(" ")[0] + " " + response.data.user.name.split(" ")[1];
+        const fullName =
+          response.data.user.name.split(" ")[0] +
+          " " +
+          response.data.user.name.split(" ")[1];
         setuserfullname(fullName);
         const firstname = response.data.user.name.split(" ")[0][0];
         const lastname = response.data.user.name.split(" ")[1][0];
         setusername(firstname + "" + lastname);
 
-        if(!response.data.valid) {
-            localStorage.removeItem("token");
-            navigate("/login");
-            return ;
+        if (!response.data.valid) {
+          localStorage.removeItem("token");
+          navigate("/login");
+          return;
         }
         console.log(response);
       } catch (error) {
         localStorage.removeItem("token");
         navigate("/login");
-        return ;
+        return;
         // console.log(error);
       }
     };
     checkingToken();
   });
 
-  return (  
-    <>
-    <h1>hello</h1>
-    </>
+  console.log(totalmeeting);
+
+  return (    
+      <div className="meetings_container">
+        <button className="meetings_close-button">+</button>
+        {/* Close Button */}
+        <header className="meetings_header">
+          <div className="meetings_badge">Consult</div>
+          <span className="meetings_title">Now</span>
+        </header>
+        {totalmeeting.map((ele) => {
+          return (
+            <div className="meetings-booked-container">
+              <h2>Meetings 01</h2>
+              <div className="meetings-booked-content">
+                <div className="meetings-booked">
+                  <h3>booked Date</h3>
+                  <span>13/13/31</span>
+                </div>
+
+                <div className="meetings-booked">
+                  <h3>Time Duration</h3>
+                  <span>1:00pm - 4:00pm</span>
+                </div>
+
+                <div className="meetings-booked">
+                  <h3>Status</h3>
+                  <span>completed</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
   );
 };
 

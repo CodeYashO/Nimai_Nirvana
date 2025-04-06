@@ -6,6 +6,7 @@
   background-color: white;
   padding-block: 25px;
   margin-block: 15px;
+  margin-inline: auto ;
   width: 95%;
   border-radius: 20px;
   position: relative;

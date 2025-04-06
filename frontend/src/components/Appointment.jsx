@@ -56,10 +56,10 @@ const Appointment = () => {
 
             <div className="appointment_menu_link_container">
               <ul className="appointment_menu_link_list">
-                <li><i class="fa-solid fa-house"> </i>Dashboard</li>
+                <li onClick={() => navigate("/userDashboard")}><i class="fa-solid fa-house"> </i>Dashboard</li>
                 <li><i class="fa-solid fa-chart-simple"></i>courses</li>
                 <li><i class="fa-solid fa-film"></i>report</li>
-                <li><i class="fa-regular fa-calendar-check"></i>appointment</li>
+                <li onClick={() => navigate("/appointment")}><i class="fa-regular fa-calendar-check"></i>appointment</li>
               </ul>
             </div>
         </div>

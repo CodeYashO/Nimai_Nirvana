@@ -4,11 +4,14 @@ import "../css/ConsultNow.css";
 const ConsultNow = ({ onClose , userfullname , setshowConsult}) => {
   const [scheduleDate, setScheduleDate] = useState("");
   const [appointmentTime, setAppointmentTime] = useState("");
+  const token = localStorage.getItem("token")
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Appointment Scheduled on: ${scheduleDate} at ${appointmentTime}`);
   };
+
+  console.log(token);
 
   return (
     <div className="consultNow_container">
