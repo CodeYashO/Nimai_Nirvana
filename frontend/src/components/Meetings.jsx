@@ -3,11 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../css/Meetings.css";
 
-const Meetings = () => {
+const Meetings = ({setshowConsult}) => {
   const navigate = useNavigate();
-  const [showConsult, setshowConsult] = useState(true);
-  const [userfullname, setuserfullname] = useState("");
-  const [username, setusername] = useState("");
   const [totalmeeting, settotalmeeting] = useState([1, 2, 3, 4 , 5]);
   const token = localStorage.getItem("token");
 
@@ -20,14 +17,6 @@ const Meetings = () => {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-        const fullName =
-          response.data.user.name.split(" ")[0] +
-          " " +
-          response.data.user.name.split(" ")[1];
-        setuserfullname(fullName);
-        const firstname = response.data.user.name.split(" ")[0][0];
-        const lastname = response.data.user.name.split(" ")[1][0];
-        setusername(firstname + "" + lastname);
 
         if (!response.data.valid) {
           localStorage.removeItem("token");
@@ -49,7 +38,7 @@ const Meetings = () => {
 
   return (    
       <div className="meetings_container">
-        <button className="meetings_close-button">+</button>
+        <button className="meetings_close-button" onClick={() => setshowConsult(true)}>+</button>
         {/* Close Button */}
         <header className="meetings_header">
           <div className="meetings_badge">Consult</div>

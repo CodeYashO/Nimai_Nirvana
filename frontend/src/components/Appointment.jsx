@@ -66,7 +66,7 @@ const Appointment = () => {
 
         {/* Dashboard content */}
         <div className="appointment_content">
-            {showConsult ? <ConsultNow userfullname={userfullname} setshowConsult={setshowConsult}/> : <Meetings/>}
+            {showConsult ? <ConsultNow userfullname={userfullname} setshowConsult={setshowConsult}/> : <Meetings setshowConsult={setshowConsult}/>}
         </div>
       </div>
 

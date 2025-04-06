@@ -53,9 +53,9 @@
 /* Meetings booking */
 
 .meetings-booked-container {
-    width: 85%;
+    width: 90%;
     background-color: rgb(228, 228, 228);
-    border-radius: 50px;
+    border-radius: 30px;
     padding-bottom: 20px;
 }
 
