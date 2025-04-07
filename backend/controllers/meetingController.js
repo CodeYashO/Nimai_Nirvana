@@ -41,8 +41,30 @@ exports.createMeeting = async (req, res) => {
       message: "Meeting created successfully",
       meeting: savedMeeting,
     });
+
+    await sendEmail(email, "Meeting Successfully Registered", `Your Link is: https://meet.google.com/vwf-pmyp-qvj`);
   } catch (error) {
     console.error("Error creating meeting:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+exports.getUserMeetings = async (req, res) => {
+    console.log(req.params)
+    try {
+      const email = req.params.email;
+  
+      const user = await User.findOne({email}).populate("meetings");
+  
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+  
+      res.status(200).json({
+        message: "Meetings fetched successfully",
+        meetings: user.meetings,
+      });
+    } catch (err) {
+      console.error("Fetch Meetings Error:", err);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  };

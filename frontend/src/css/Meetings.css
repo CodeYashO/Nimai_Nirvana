@@ -77,3 +77,10 @@
 }
 
 
+.meetings-status-true {
+    color: blue;
+}
+
+.meetings-status-false {
+    color: rgb(255, 0, 0);
+}

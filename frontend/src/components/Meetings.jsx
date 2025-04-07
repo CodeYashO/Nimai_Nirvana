@@ -5,34 +5,21 @@ import "../css/Meetings.css";
 
 const Meetings = ({setshowConsult}) => {
   const navigate = useNavigate();
-  const [totalmeeting, settotalmeeting] = useState([1, 2, 3, 4 , 5]);
+  const [totalmeeting, settotalmeeting] = useState([]);
   const token = localStorage.getItem("token");
+  const email = localStorage.getItem("email");
 
   useEffect(() => {
-    const checkingToken = async () => {
+    const fetchingToken = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:5000/api/auth/user/verify-token",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
-
-        if (!response.data.valid) {
-          localStorage.removeItem("token");
-          navigate("/login");
-          return;
-        }
-        console.log(response);
-      } catch (error) {
-        localStorage.removeItem("token");
-        navigate("/login");
-        return;
-        // console.log(error);
+        const response = await axios.get(`http://localhost:5000/api/meetings/get-user-meeting/${email}`);
+        settotalmeeting([...response.data.meetings]);
+      }catch(error) {
+        console.log(error);
       }
     };
-    checkingToken();
-  });
+    fetchingToken();
+  }, []);
 
   console.log(totalmeeting);
 
@@ -44,24 +31,24 @@ const Meetings = ({setshowConsult}) => {
           <div className="meetings_badge">Consult</div>
           <span className="meetings_title">Now</span>
         </header>
-        {totalmeeting.map((ele) => {
+        {totalmeeting.map((ele , index) => {
           return (
             <div className="meetings-booked-container">
-              <h2>Meetings 01</h2>
+              <h2>{`Meeting - #${index + 1}`}</h2>
               <div className="meetings-booked-content">
                 <div className="meetings-booked">
-                  <h3>booked Date</h3>
-                  <span>13/13/31</span>
+                  <h3>Booked Date</h3>
+                  <span>{ele.BookedDate}</span>
                 </div>
 
                 <div className="meetings-booked">
                   <h3>Time Duration</h3>
-                  <span>1:00pm - 4:00pm</span>
+                  <span>{ele.appointmentTime}</span>
                 </div>
 
                 <div className="meetings-booked">
                   <h3>Status</h3>
-                  <span>completed</span>
+                  <span className={`meetings-status-${ele.status}`}>{ele.status ? "completed" : "pending"}</span>
                 </div>
               </div>
             </div>
