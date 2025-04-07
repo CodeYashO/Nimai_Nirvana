@@ -5,8 +5,6 @@
 }
 
 .dashboard{
-    position: relative;
-    top:8vh;
     height:91.9vh;
     background-image: url("/public/background.jpg");
     background-repeat: no-repeat;
