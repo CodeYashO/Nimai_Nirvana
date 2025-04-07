@@ -24,6 +24,7 @@ function App() {
       <Route path="/forgot-password" element={<ForgotPassword/>}/>
       <Route path='/appoinment' element={<Appointment/>} />
       <Route path='/userDashboard' element={<UserDashboard/>}/>
+      <Route path='/appointment' element={<Appointment/>}/>
     </Routes>
   );
 } 

@@ -66,7 +66,7 @@ const ResetPassword = () => {
           </button>
         </form>
       </div> 
-
+ 
       {/* Footer */}
       <Footer/>
     </div>

@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema(
     role : {type : String , enum : ["admin" , "user"] , default : "user"},
     isVerified: { type: Boolean, default: false },
     otp: { type: String },
+    meetings : [{ type: mongoose.Schema.Types.ObjectId, ref: "Meeting" }],
     payment : {type : Boolean , default : false},
     otpExpiry: { type: Date },
     token : String,

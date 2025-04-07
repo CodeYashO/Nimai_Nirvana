@@ -1,0 +1,86 @@
+.meetings_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding-block: 25px;
+  margin: 25px;
+  gap: 30px;
+  width: 95%;
+  border-radius: 20px;
+  position: relative;
+}
+
+.meetings_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.meetings_badge {
+  background-color: #ff9800; /* Saffron */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.meetings_title {
+  font-size: 22px;
+  color: #ff9800;
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.meetings_close-button {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+/* Meetings booking */
+
+.meetings-booked-container {
+    width: 90%;
+    background-color: rgb(228, 228, 228);
+    border-radius: 30px;
+    padding-bottom: 20px;
+}
+
+.meetings-booked-container > h2 {
+    color: white;
+    background-color: #ff9800;
+    padding-inline: 20px;
+    padding-block: 5px;
+    border-radius: 20px;
+    max-width: max-content;
+    margin-inline: auto;
+    margin-block: 20px;
+}
+
+.meetings-booked-content {
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+}
+
+
+.meetings-status-true {
+    color: blue;
+}
+
+.meetings-status-false {
+    color: rgb(255, 0, 0);
+}

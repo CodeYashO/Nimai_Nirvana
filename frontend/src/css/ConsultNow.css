@@ -1,13 +1,15 @@
 .consultNow_container {
-  /* border:1px solid black; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height:0vh;
   background-color: white;
-  padding: 20px;
-  width: 80%;
+  padding-block: 25px;
+  margin-block: 15px;
+  margin-inline: auto ;
+  width: 95%;
+  border-radius: 20px;
+  position: relative;
 }
 
 .consultNow_header {
@@ -92,9 +94,9 @@
 
 .consultNow_close-button {
   position: absolute;
-  top: 10px;
-  right: 15px;
   background: none;
+  top: 2%;
+  right: 2%;
   border: none;
   font-size: 20px;
   font-weight: bold;

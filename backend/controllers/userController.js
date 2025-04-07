@@ -99,7 +99,7 @@ exports.login = async (req, res) => {
       }
     ); 
 
-    res.status(200).json({ message: "Login successful.", token });
+    res.status(200).json({ message: "Login successful.", token , email});
   } catch (error) {
     res
       .status(500)

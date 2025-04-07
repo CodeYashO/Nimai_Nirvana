@@ -4,7 +4,7 @@
 }
 
 .dashboard{
-    height: 100vh;
+    height:91.9vh;
     background-image: url("/public/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,7 +12,6 @@
 }
 
 .content{
-    /* border:1px solid red; */
     width:50%;
     height:100%;
     display: flex;
